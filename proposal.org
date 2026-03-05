@@ -1,0 +1,65 @@
+#+title: But it builds on my machine!: Building Deterministic OCI images with Nix
+#+author: Benjamin Philip
+* Description
+Docker popularized containers as the solution to the classic “it works on my
+machine” problem by packaging applications with their environments. Ironically,
+while containers make runtime environments reproducible, images builds often are
+not. Docker builds tend to have unrestricted network access, depend on unpinned
+packages, and may produce different results over time—leading to inconsistent
+environments, fragile CI/CD pipelines, and difficult-to-reproduce failures.
+
+Deterministic software builds are a well-understood problem in the broader build
+systems world. From a build perspective, container images are simply
+artifacts—no different from compiled binaries—and follow the same principles of
+reproducibility.
+
+The Nix build system was designed to produce hermetic, reproducible builds. By
+using Nix to construct OCI images, we can eliminate many sources of
+non-determinism while enabling the same environment definitions to be reused
+across development, CI, and containers.
+
+In this talk, we’ll explore common sources of non-determinism in Docker builds
+and show how Nix can produce deterministic OCI images, from augmenting existing
+Docker workflows to building images entirely with Nix.
+* What track are you submitting for?
+Packages, Images and Containers
+* Session format
+Session Presentation (30-40 minutes in length)
+* Audience Level
+Intermediate
+* Benefits to the Ecosystem
+Container images are widely used to distribute and deploy open-source
+applications and services, yet many projects rely on build pipelines that can be
+difficult to reproduce or verify. This talk provides attendees with practical
+techniques for identifying sources of non-determinism in container image builds
+and applying hermetic build principles to produce deterministic artifacts.
+
+Participants will learn how to recognize common pitfalls in Docker-based build
+workflows and how tools like Nix can be used to construct OCI images defined by
+the Open Container Initiative in a reproducible way. The session also
+demonstrates incremental integration strategies, enabling maintainers to improve
+reproducibility within existing Docker workflows rather than requiring a full
+tooling replacement. Along the way, the talk introduces a different model for
+defining build environments, broadening the community’s toolkit for creating
+reproducible software infrastructure.
+
+By applying these practices, open-source maintainers can build more reliable CI
+pipelines and reduce configuration drift by reusing environment definitions
+across development, CI, and container builds. Deterministic image builds also
+make it easier for communities to independently reproduce, audit, and verify
+distributed artifacts—strengthening transparency and trust in the open-source
+software supply chain.
+* Presented this talk before
+No.
+* Interested in Speaker Office Hours?
+Maybe.
+** What topics would you be able to discuss?
+I’d be happy to discuss practical adoption of Nix for building OCI images and
+reproducible development environments. Topics could include integrating Nix with
+existing Docker and CI workflows, identifying sources of non-determinism in
+container builds, and strategies for incrementally introducing hermetic builds
+into open-source projects. I’m also happy to answer questions about reproducible
+builds more broadly and share practical experiences using Nix in development and
+CI environments.
+* Are you both the submitter and the speaker?
+Yes.
