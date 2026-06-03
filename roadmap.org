@@ -1,0 +1,31 @@
+#+title: Roadmap
+* TODO [0/5] Open Container Initiative
+** TODO [[https://blog.quarkslab.com/digging-into-the-oci-image-specification.html][Digging into the OCI Image Specification]]
+** WAIT [[https://specs.opencontainers.org/image-spec/][image-spec]]
+** WAIT [[https://specs.opencontainers.org/distribution-spec][distribution-spec]]
+** WAIT [[https://specs.opencontainers.org/runtime-spec/?v=v1.0.2][runtime-spec]]
+** TODO [0/5] Tooling
+*** TODO [[https://www.redhat.com/en/topics/containers/what-is-skopeo][What is Skopeo?]]
+*** TODO [[https://www.redhat.com/en/topics/containers/what-is-buildah][What is Buildah?]]
+*** TODO [[https://mkdev.me/posts/buildah-a-complete-overview][Buildah: A Complete Overview]]
+*** TODO [[https://docs.podman.io/en/latest/][What is Podman?]]
+*** TODO [[https://last9.io/blog/podman-vs-docker/][Podman vs Docker]]
+* TODO [0/2] Traditional Docker Build Reproducibility
+** TODO [0/3] Failures
+*** TODO [[https://hal.science/hal-05381097v1/file/main.pdf][Docker does not Guarantee Reproducibility]]
+*** TODO [[https://arxiv.org/html/2602.17678v1][It's Not Just Timestamps: A Study on Docker Reproducibility]]
+*** TODO [[https://thehftguy.com/2016/11/01/docker-in-production-an-history-of-failure/][Docker in Production: A History in Failure]]
+** TODO [0/2] Traditional Reproducibility
+*** TODO [[https://cd.foundation/blog/2021/06/18/verifiable-supply-chain-metadata-for-tekton/][Verifiable Supply Chain Metadata for Tekton]]
+*** TODO Find more traditional techniques for improving reproducibility
+* TODO [0/2] Nix
+** TODO [0/2] Nix and NixOS, generally
+*** TODO [[https://jonathanlorimer.dev/posts/nix-thesis.html][[A brief commentary on] The Nix Thesis]]
+*** TODO [[https://edolstra.github.io/pubs/nixos-jfp-final.pdf][NixOS: A Purely Functional Linux Distribution]]
+** TODO [0/6] Nix and OCI images
+*** TODO [[https://numtide.com/blog/nix-docker-or-both/][Nix, Docker - or both?]]
+*** TODO [[https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-dockerTools][pkgs.dockerTools]]
+*** TODO [[https://mitchellh.com/writing/nix-with-dockerfiles][Using Nix with Dockerfiles]]
+*** TODO [[https://xeiaso.net/talks/2024/nix-docker-build/][Nix is a better Docker image builder than Docker's image builder]]
+*** TODO [[https://lewo.abesis.fr/posts/nix-build-container-image/][A faster dockerTools.buildImage prototype]]
+*** TODO [[https://github.com/nlewo/nix2container][nix2container]]
