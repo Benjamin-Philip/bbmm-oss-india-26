@@ -4,7 +4,7 @@
 ** WAIT [[https://specs.opencontainers.org/image-spec/][image-spec]]
 ** WAIT [[https://specs.opencontainers.org/distribution-spec][distribution-spec]]
 ** WAIT [[https://specs.opencontainers.org/runtime-spec/?v=v1.0.2][runtime-spec]]
-** TODO [2/5] Tooling
+** TODO [3/5] Tooling
 *** DONE [[https://www.redhat.com/en/topics/containers/what-is-skopeo][What is Skopeo?]]
 - Tool for manipulating, inspecting, signing, and transferring container images
 - Docker CLI compatible
@@ -32,7 +32,14 @@
 - Buildah specializes in building container images
 - Podman specializes in higher level tasks involved in creating, maintaining and
   running a container
-*** TODO [[https://mkdev.me/posts/buildah-a-complete-overview][Buildah: A Complete Overview]]
+*** DONE [[https://mkdev.me/posts/buildah-a-complete-overview][Buildah: A Complete Overview]]
+- Rootless builder for OCI images
+- Exposes a CLI interface for various Dockerfile/Containerfile directives
+- Thus, instead of a Dockerfile, a shell script could build an OCI image
+- Buildah's Rootless nature means that containers are scoped to a single system user
+- Rootless containers are achieved by using Linux namespaces as much as
+  possible, with cgroup v2 for resource management
+- Application: OpenShift BuildConfigs - declarative and Kubernetes-native container builder
 *** TODO [[https://docs.podman.io/en/latest/][What is Podman?]]
 *** TODO [[https://last9.io/blog/podman-vs-docker/][Podman vs Docker]]
 * TODO [0/2] Traditional Docker Build Reproducibility
