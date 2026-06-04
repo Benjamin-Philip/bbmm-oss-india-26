@@ -4,8 +4,21 @@
 ** WAIT [[https://specs.opencontainers.org/image-spec/][image-spec]]
 ** WAIT [[https://specs.opencontainers.org/distribution-spec][distribution-spec]]
 ** WAIT [[https://specs.opencontainers.org/runtime-spec/?v=v1.0.2][runtime-spec]]
-** TODO [0/5] Tooling
-*** TODO [[https://www.redhat.com/en/topics/containers/what-is-skopeo][What is Skopeo?]]
+** TODO [1/5] Tooling
+*** DONE [[https://www.redhat.com/en/topics/containers/what-is-skopeo][What is Skopeo?]]
+- Tool for manipulating, inspecting, signing, and transferring container images
+- Docker CLI compatible
+- Very useful for image distribution
+- Notable commands:
+  - ~skopeo inspect~: inspect image metadata without pulling the entire image
+  - ~skopeo sync~: direct registry-to-registry, registry-to-files, and
+    files-to-registry synchronisation
+  - ~skopeo copy~: naive image copying
+- Specialized tool, more flexible and agile to evolve than monolithic docker
+- Benefits:
+  - Rootless container management
+  - Daemonless architecture
+  - Native systemd integration
 *** TODO [[https://www.redhat.com/en/topics/containers/what-is-buildah][What is Buildah?]]
 *** TODO [[https://mkdev.me/posts/buildah-a-complete-overview][Buildah: A Complete Overview]]
 *** TODO [[https://docs.podman.io/en/latest/][What is Podman?]]
