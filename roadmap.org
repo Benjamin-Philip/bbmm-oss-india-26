@@ -4,7 +4,7 @@
 ** WAIT [[https://specs.opencontainers.org/image-spec/][image-spec]]
 ** WAIT [[https://specs.opencontainers.org/distribution-spec][distribution-spec]]
 ** WAIT [[https://specs.opencontainers.org/runtime-spec/?v=v1.0.2][runtime-spec]]
-** TODO [1/5] Tooling
+** TODO [2/5] Tooling
 *** DONE [[https://www.redhat.com/en/topics/containers/what-is-skopeo][What is Skopeo?]]
 - Tool for manipulating, inspecting, signing, and transferring container images
 - Docker CLI compatible
@@ -19,7 +19,19 @@
   - Rootless container management
   - Daemonless architecture
   - Native systemd integration
-*** TODO [[https://www.redhat.com/en/topics/containers/what-is-buildah][What is Buildah?]]
+*** DONE [[https://www.redhat.com/en/topics/containers/what-is-buildah][What is Buildah?]]
+- Builder for OCI images
+- Allows you to:
+  - Inspect, verify and modify images
+  - Push images from local storage to a registry
+  - Remove locally stored container images
+  - Mount and unmount a working container's root file system
+  - Use updated contents of an image as a layer for a new image
+- Buildah and Podman are complementary 
+- Buildah is more fine-grained and allows lower level access than podman
+- Buildah specializes in building container images
+- Podman specializes in higher level tasks involved in creating, maintaining and
+  running a container
 *** TODO [[https://mkdev.me/posts/buildah-a-complete-overview][Buildah: A Complete Overview]]
 *** TODO [[https://docs.podman.io/en/latest/][What is Podman?]]
 *** TODO [[https://last9.io/blog/podman-vs-docker/][Podman vs Docker]]
