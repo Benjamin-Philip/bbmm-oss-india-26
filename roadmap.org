@@ -1,10 +1,10 @@
 #+title: Roadmap
-* TODO [0/5] Open Container Initiative
+* TODO [1/5] Open Container Initiative
 ** TODO [[https://blog.quarkslab.com/digging-into-the-oci-image-specification.html][Digging into the OCI Image Specification]]
 ** WAIT [[https://specs.opencontainers.org/image-spec/][image-spec]]
 ** WAIT [[https://specs.opencontainers.org/distribution-spec][distribution-spec]]
 ** WAIT [[https://specs.opencontainers.org/runtime-spec/?v=v1.0.2][runtime-spec]]
-** TODO [4/5] Tooling
+** DONE [5/5] Tooling
 *** DONE [[https://www.redhat.com/en/topics/containers/what-is-skopeo][What is Skopeo?]]
 - Tool for manipulating, inspecting, signing, and transferring container images
 - Docker CLI compatible
@@ -47,7 +47,19 @@
   - Run a container
   - Build containers
   - Share or distribute containers
-*** TODO [[https://last9.io/blog/podman-vs-docker/][Podman vs Docker]]
+*** DONE [[https://last9.io/blog/podman-vs-docker/][Podman vs Docker]]
+Major differences:
+**** Daemon vs Daemonless
+Docker uses a client-server model for containers, which allows centralized
+management of containers.
+
+Podman is daemonless and each container is completely independent from each other.
+**** Root vs Rootless
+Docker containers must run with root permissions due to the daemon. Podman
+doesn't.
+**** Tooling Compatibility
+Podman aims to be as compatible with docker as possible, but incompatibilities
+in Podman compose exist. Docker swarm is not supported.
 * TODO [0/2] Traditional Docker Build Reproducibility
 ** TODO [0/3] Failures
 *** TODO [[https://hal.science/hal-05381097v1/file/main.pdf][Docker does not Guarantee Reproducibility]]
