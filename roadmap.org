@@ -4,7 +4,7 @@
 ** WAIT [[https://specs.opencontainers.org/image-spec/][image-spec]]
 ** WAIT [[https://specs.opencontainers.org/distribution-spec][distribution-spec]]
 ** WAIT [[https://specs.opencontainers.org/runtime-spec/?v=v1.0.2][runtime-spec]]
-** TODO [3/5] Tooling
+** TODO [4/5] Tooling
 *** DONE [[https://www.redhat.com/en/topics/containers/what-is-skopeo][What is Skopeo?]]
 - Tool for manipulating, inspecting, signing, and transferring container images
 - Docker CLI compatible
@@ -40,7 +40,13 @@
 - Rootless containers are achieved by using Linux namespaces as much as
   possible, with cgroup v2 for resource management
 - Application: OpenShift BuildConfigs - declarative and Kubernetes-native container builder
-*** TODO [[https://docs.podman.io/en/latest/][What is Podman?]]
+*** DONE [[https://docs.podman.io/en/latest/][What is Podman?]]
+- Tool that handles everything to do with containers at a high level
+- Can be used to:
+  - Find containers on a container registry
+  - Run a container
+  - Build containers
+  - Share or distribute containers
 *** TODO [[https://last9.io/blog/podman-vs-docker/][Podman vs Docker]]
 * TODO [0/2] Traditional Docker Build Reproducibility
 ** TODO [0/3] Failures
