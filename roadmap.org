@@ -100,9 +100,30 @@ doesn't.
 Podman aims to be as compatible with docker as possible, but incompatibilities
 in Podman compose exist. Docker swarm is not supported.
 * TODO [0/2] Traditional Docker Build Reproducibility
-** TODO [0/3] Failures
+** TODO [1/3] Failures
 *** TODO [[https://hal.science/hal-05381097v1/file/main.pdf][Docker does not Guarantee Reproducibility]]
-*** TODO [[https://arxiv.org/html/2602.17678v1][It's Not Just Timestamps: A Study on Docker Reproducibility]]
+*** DONE [[https://arxiv.org/html/2602.17678v1][It's Not Just Timestamps: A Study on Docker Reproducibility]]
+Samples a stratified collection of GitHub repositories with Dockefiles.
+**** Results
+Reproducibility outcomes:
+- as-is bitwise reproducibility is rare (2.7%)
+- after infrastructure hardening, it becomes 18.6%
+- most images do not become reproducible once infrastructure sources of non-determinism are removed
+- developer-choices play a substantial role
+Causes of non-reproducibility:
+- Timestamps and metadata (100%)
+- Formatting / file ordering (78%)
+- System logs (43%)
+- Caches and databases (36.8%)
+- Compiled artifacts (20%)
+- Application-specific files (13%)
+- Random / non-deterministic data (9.4%)
+- Package-manager state (5.6%)
+**** Recommendations
+- install system packages in a single ~RUN~ with ~--no-install-recommends~
+- remove package index caches after every package installation
+- pin base image and package installations to specific versions
+- avoid baking runtime state or generated reports into the final image
 *** TODO [[https://thehftguy.com/2016/11/01/docker-in-production-an-history-of-failure/][Docker in Production: A History in Failure]]
 ** TODO [0/2] Traditional Reproducibility
 *** TODO [[https://cd.foundation/blog/2021/06/18/verifiable-supply-chain-metadata-for-tekton/][Verifiable Supply Chain Metadata for Tekton]]
