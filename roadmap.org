@@ -1,5 +1,44 @@
 #+title: Roadmap
-* TODO [1/5] Open Container Initiative
+* TODO [2/6] Open Container Initiative
+** DONE [[https://blog.quarkslab.com/digging-into-runtimes-runc.html][Digging into Runtimes - runc]]
+*** Brief history of container runtimes
+- Container technologies appeared after the invention of /cgroups/ and /namespaces/
+- In 2013, Docker was created on top of [[https://linuxcontainers.org/lxc/introduction/][LXC]], introducing "packaging" of
+  containers via images, and "portability" of images
+- In 2014, ~libcontainer~ was released to create isolated processes and manage
+  their life cycles
+- In 2014, Kubernetes was announced
+- OCI was created with ~runtime-spec~ and ~image-spec~
+- ~libcontainer~ was donated to OCI to create ~runc~
+- ~runc~ is a fully compatible API on top of ~libcontainer~ to spawn and manage
+  containers
+- Today, containers are split into 2 categories:
+  - low-level: runc, gVisor, Firecracker
+  - high-level: containerd, Docker, CRI-O, podman
+- Runc is a standardised runtime, but it doesn't follow ~image-spec~
+- High-level runtimes, like Docker and containerd implement this on top of runc
+*** Runc
+Any container consists of 2 parts:
+- OCI configuration: JSON file with info on the container process
+- Root filesystem directory: root filesystem used by container process via chroot
+
+The OCI config has info on:
+- [[https://man7.org/linux/man-pages/man7/capabilities.7.html][capabilities]]
+- [[https://docs.huihoo.com/doxygen/linux/kernel/3.7/structtask__struct.html][task structure info]]
+- [[https://www.linuxtopia.org/online_books/introduction_to_linux/linux_Mount_points.html][mount points]]
+- [[https://man7.org/linux/man-pages/man7/namespaces.7.html][namespaces]]
+- [[https://man7.org/linux/man-pages/man7/cgroups.7.html][cgroups]]
+
+Key runc features include:
+- Starting a container
+- Pause and resuming a container
+- Inspecting the state of a container
+- Checkpoint (i.e. snapshot the current state) of a container with the help of
+  [[https://criu.org/Main_Page][CRIU]], and restore a checkpoint (possibly on a different host)
+- Execute a new process in an existing container
+- Hooks
+
+Rootless containers can be made, accounting the hierarchy of user namespaces.
 ** TODO [[https://blog.quarkslab.com/digging-into-the-oci-image-specification.html][Digging into the OCI Image Specification]]
 ** WAIT [[https://specs.opencontainers.org/image-spec/][image-spec]]
 ** WAIT [[https://specs.opencontainers.org/distribution-spec][distribution-spec]]
@@ -27,7 +66,7 @@
   - Remove locally stored container images
   - Mount and unmount a working container's root file system
   - Use updated contents of an image as a layer for a new image
-- Buildah and Podman are complementary 
+- Buildah and Podman are complementary
 - Buildah is more fine-grained and allows lower level access than podman
 - Buildah specializes in building container images
 - Podman specializes in higher level tasks involved in creating, maintaining and
